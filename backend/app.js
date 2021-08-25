@@ -1,16 +1,8 @@
 require('dotenv').config();
 
+// App and server
 const { app, server } = require('./serverSetup');
 
+// connect to database
 const db = require('./db/setup');
-
-db.on('error', () => {
-	console.log('An error occurred while connecting to database');
-});
-db.once('open', () => {
-	const PORT = process.env.PORT || 5000;
-	server.listen(PORT, () => {
-		console.log(`Server is listening on port ${PORT}`);
-	});
-	console.log('Successfully connected to the database!!');
-});
+db.connect();
