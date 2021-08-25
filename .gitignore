@@ -123,4 +123,4 @@ dist
 .pnp.*
 
 # Custom ignores
-
+*.rest
