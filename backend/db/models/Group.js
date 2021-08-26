@@ -13,6 +13,7 @@ const groupSchema = new Schema(
 		},
 		createdBy: {
 			type: Schema.Types.ObjectId,
+			// required: [true, 'createdBy is required'],
 			ref: 'User',
 		},
 		members: [
