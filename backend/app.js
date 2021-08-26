@@ -7,7 +7,5 @@ const { app, server } = require('./serverSetup');
 const db = require('./db/setup');
 db.connect();
 
-// Routes
-app.get('/', (req, res) => {
-	res.json({ status: 'Working!!' });
-});
+// Import db operations
+const dbOps = require('./db/operations');
