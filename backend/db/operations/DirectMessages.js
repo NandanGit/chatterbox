@@ -57,15 +57,15 @@ exports.retrieve = async (username1, username2) => {
 			{ from: 1, to: 1, createdAt: 1, body: 1, _id: 0 }
 		)
 			.sort({ createdAt: 1 })
-			.populate({ path: 'from to', select: 'username -_id' });
-		messages = messages.map((message) => {
-			return {
-				from: message.from.username,
-				to: message.to.username,
-				body: message.body,
-				createdAt: message.createdAt,
-			};
-		});
+			.populate({ path: 'from to', select: 'username displayName -_id' });
+		// messages = messages.map((message) => {
+		// 	return {
+		// 		from: message.from.username,
+		// 		to: message.to.username,
+		// 		body: message.body,
+		// 		createdAt: message.createdAt,
+		// 	};
+		// });
 		return {
 			status: 'success',
 			messages,

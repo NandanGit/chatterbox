@@ -5,10 +5,12 @@ const groupMessageSchema = new Schema(
 		from: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
+			required: [true, 'Origin is required'],
 		},
 		to: {
 			type: Schema.Types.ObjectId,
 			ref: 'Group',
+			required: [true, 'Destination is required'],
 		},
 		body: {
 			type: String,
