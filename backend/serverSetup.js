@@ -4,7 +4,10 @@ const morgan = require('morgan');
 const http = require('http');
 
 // Import Routes
-const { authRoutes } = require('./routes');
+const {
+	authRoutes,
+	dbSandboxRoutes, // Temporary routes
+} = require('./routes');
 
 // Express setup
 const app = express();
@@ -17,6 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Mount Routes
 app.use('/', authRoutes);
+app.use('/db', dbSandboxRoutes); // VERY VERY DANGEROUS!!! (IMMEDIATELY REMOVE AFTER TESTING)
 
 const server = http.createServer(app);
 

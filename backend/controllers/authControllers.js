@@ -9,7 +9,7 @@ exports.loginController = async (req, res) => {
 
 exports.signupController = async (req, res) => {
 	const user = req.body;
-	const createdUser = await dbOps.Users.createUser(user);
+	const createdUser = await dbOps.Users.create(user);
 	res.json({
 		status: 'success',
 		message: 'User created',

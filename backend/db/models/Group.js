@@ -7,6 +7,10 @@ const groupSchema = new Schema(
 			required: [true, 'Group name is required'],
 			unique: true,
 		},
+		displayName: {
+			type: String,
+			required: [true, 'Display name is required'],
+		},
 		createdBy: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',

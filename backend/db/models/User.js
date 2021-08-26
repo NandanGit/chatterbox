@@ -7,6 +7,10 @@ const userSchema = new Schema(
 			required: [true, 'Username is required'],
 			unique: true,
 		},
+		displayName: {
+			type: String,
+			required: [true, 'Display Name is required'],
+		},
 		password: {
 			type: String, // Hashed
 			required: [true, 'Password is required'],
