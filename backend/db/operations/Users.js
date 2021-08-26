@@ -57,7 +57,10 @@ exports.addFriendTo = async (username, friendUsername) => {
 			{ username },
 			{ $addToSet: { friends: friend._id } }
 		);
-		return { status: 'success', result };
+		return {
+			status: 'success',
+			message: `${friendName} joined ${username}'s friendlist`,
+		};
 	} catch (err) {
 		return { status: 'error', message: err.message };
 	}
@@ -83,7 +86,10 @@ exports.removeFriendFrom = async (username, friendUsername) => {
 			{ username },
 			{ $pull: { friends: friend._id } }
 		);
-		return { status: 'success', result };
+		return {
+			status: 'success',
+			message: `${friendName} left ${username}'s friendlist`,
+		};
 	} catch (err) {
 		return { status: 'error', message: err.message };
 	}
@@ -93,7 +99,10 @@ exports.joinUserTo = async (username, groupName) => {
 	try {
 		const user = await User.findOne({ username }, { username: 1 });
 		if (!user) {
-			return { status: 'error', message: `User ${username} not found` };
+			return {
+				status: 'error',
+				message: `User ${username} not found`,
+			};
 		}
 		const group = await Group.findOne({ groupName }, { groupName: 1 });
 		if (!group) {
@@ -102,11 +111,14 @@ exports.joinUserTo = async (username, groupName) => {
 				message: `Group ${groupName} not found`,
 			};
 		}
-		const result = await User.updateOne(
+		await User.updateOne(
 			{ username },
 			{ $addToSet: { groups: group._id } }
 		);
-		return { status: 'success', result };
+		return {
+			status: 'success',
+			message: `${username} joined ${groupName}`,
+		};
 	} catch (err) {
 		return { status: 'error', message: err.message };
 	}
@@ -129,7 +141,10 @@ exports.removeUserFrom = async (username, groupName) => {
 			{ username },
 			{ $pull: { groups: group._id } }
 		);
-		return { status: 'success', result };
+		return {
+			status: 'success',
+			message: `${username} left ${groupName}`,
+		};
 	} catch (err) {
 		return { status: 'error', message: err.message };
 	}
