@@ -16,6 +16,24 @@ exports.create = async (user) => {
 	}
 };
 
+exports.get = async (username) => {
+	try {
+		const user = await User.findOne({ username }, { _id: 0, password: 0 });
+		if (!user) {
+			return {
+				status: 'error',
+				message: `User not found`,
+			};
+		}
+		return {
+			status: 'success',
+			user,
+		};
+	} catch (err) {
+		return { status: 'error', message: err.message };
+	}
+};
+
 exports.search = async (keyword) => {
 	const keywordRegex = new RegExp(`${keyword}`, 'i');
 	try {
