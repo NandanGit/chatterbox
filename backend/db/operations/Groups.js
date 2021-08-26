@@ -1,5 +1,4 @@
-const { Group } = require('../models');
-const User = require('../models/User');
+const { Group, User } = require('../models');
 
 exports.create = async (group) => {
 	const newGroup = new Group(group);

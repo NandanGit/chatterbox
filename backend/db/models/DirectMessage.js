@@ -5,12 +5,14 @@ const directMessageSchema = new Schema(
 		from: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
+			required: [true, 'Origin is required'],
 		},
 		to: {
 			type: Schema.Types.ObjectId,
 			ref: 'User',
+			required: [true, 'Destination is required'],
 		},
-		content: {
+		body: {
 			type: String,
 			required: [true, 'Message body cannot be empty'],
 		},

@@ -10,7 +10,7 @@ const groupMessageSchema = new Schema(
 			type: Schema.Types.ObjectId,
 			ref: 'Group',
 		},
-		content: {
+		body: {
 			type: String,
 			required: [true, 'Message body cannot be empty'],
 		},

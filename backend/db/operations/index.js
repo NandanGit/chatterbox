@@ -1,8 +1,8 @@
 const dbOps = {
 	Users: require('./Users'),
 	Groups: require('./Groups'),
-	DirectMessages: require('./DirectMessages'),
-	GroupMessages: require('./GroupMessages'),
+	DM: require('./DirectMessages'),
+	GM: require('./GroupMessages'),
 };
 
 module.exports = dbOps;
