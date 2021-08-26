@@ -18,7 +18,7 @@ exports.create = async (user) => {
 
 exports.get = async (username) => {
 	try {
-		const user = await User.findOne({ username }, { _id: 0, password: 0 });
+		const user = await User.findOne({ username });
 		if (!user) {
 			return {
 				status: 'error',

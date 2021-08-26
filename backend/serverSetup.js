@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 // Mount Routes
 app.use('/', authRoutes);
-app.use('/db', dbSandboxRoutes); // VERY VERY DANGEROUS!!! (IMMEDIATELY REMOVE AFTER TESTING)
+// app.use('/db', dbSandboxRoutes); // VERY VERY DANGEROUS!!! (IMMEDIATELY REMOVE AFTER TESTING)
 
 const server = http.createServer(app);
 
