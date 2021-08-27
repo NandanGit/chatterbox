@@ -1,7 +1,14 @@
 import React from 'react';
+import './Auth.css';
 
-function auth(props) {
-	return <div className="auth-container"></div>;
+function Auth(props) {
+	return (
+		<div className="auth-wrapper center-elems">
+			<div className="auth-container center-elems">
+				<h1>Login/Signup</h1>
+			</div>
+		</div>
+	);
 }
 
-export default auth;
+export default Auth;

@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-	--background-color: #111;
+	--bg-color: #111;
+	--bg-color-25: #1114;
+	--bg-color-50: #1118;
+	--bg-color-75: #111c;
 
 	/*Accent #6600FF */
 	--accent: #6600ff;
+	--accent-25: #6600ff40;
+	--accent-50: #6600ff80;
+	--accent-75: #6600ffc0;
 
 	--trans-time: 0.5s;
 }
@@ -12,6 +18,7 @@
 * {
 	box-sizing: border-box;
 	margin: 0;
+	/* backdrop-filter: blur(5px); */
 	/* transition: all var(--trans-time) ease; */
 }
 
@@ -21,9 +28,9 @@ button {
 	border-radius: 0.25rem;
 }
 
-body {
+#root {
 	font-family: 'Montserrat', sans-serif;
-	background-color: var(--background-color);
+	background-color: var(--bg-color);
 	background-image: url('./background.svg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -35,7 +42,15 @@ body {
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
+	width: 100vw;
 	overflow: hidden;
+}
+
+.center-elems {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /* Scrollbar */
@@ -47,7 +62,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-	background: var(--background-color);
+	background: var(--bg-color);
 }
 
 /* Handle */
