@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Auth from './Components/Auth/Auth';
+import Auth from './Components/Auth/Authenticator';
 
 function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
